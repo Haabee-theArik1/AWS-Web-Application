@@ -1,0 +1,13 @@
+# AWS-Web-Application 
+The first step is to create github account, creating a respository naming it ( AWS-Web-Application ) initializing it with README and cloning the respository.
+The technology i use is : Amazon Web Service (AWS) to achieve my project and GIT BASH: for a git command line .
+An official VPC has been created for usage and subnets. All i did was to create my Security group and my EC2 instance. 
+SECOND STEP: i move the region to "Ireland". click on EC2, under EC2 i click on security group and i click on "create security group". Filling the basic details: security group name, Description: Allow SSH and HTTP traffic, VPC: selecting the VPC created.  adding the two inbound rules and sources.
+after creating security group, launching of instance, added name, AMI:choosing Amazon Linux 2 AMI, instance type: t2 micro, creating new key  pairs, network setting: VPC lita_project, Subnet: lita_project-subnet-private1, Auto-assign publick IP: Enable, Security group: select existing one created by me, configure storage: 8 gp2. LAUNCH INSTANCES.
+After launching instances showing successful. clicking on the instances and click on connect, click on SSH client. going to the downloaded keypairs on my download file clicking on it, it shows the git bash terminal command: pastinging the keypairs after copied my ssh examples which contains my keypairs and ec instances and paste it on gitbash, asking do i want to continue YES/NO? YES. It changes from download to "EC2 USERS@ip, after that i run the following commands to install APACHE: sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+ssh -i "your-key.pem" ec2-user@<public-ip
+After that to comfirm my APACHE running i visited the instance's public IP address in a browser. which bring me to my APACHE web the one i launched screenshot in the file.
+The AWS services used are : VPC ( Virtual private cloud) use for creating platform for users, SUBNET: logical subdivision of an ip network known as "internet protocol" for connectivity, SG ( Security Group ) this refer to virtual firewall that controls the traffic that allow inbound rule and outbound rule and EC2 Instances (Elastic Compute Cloud) this nis a web based services that allow that allow businness to launch applicarion program.
